@@ -1,0 +1,177 @@
+/*              CURIOSIDADE/REGRAS              */
+/*Quando ativado o display: flex, pode-se utilizar-se o align-items : center.*/
+/* flex-direction: column --> organiza os itens em colunas*/
+
+/*          ESTILICAÇÃO DE TEXTO            */
+/* font-weight --> troca a grossura do texto*/
+/* font-size --> troca o tamanho da letra*/
+/* font-family --> troca a fonte do texto*/
+/* text-align --> alinhamento de texto*/
+
+/*          ESTILIZAÇÃO DE BORDER           */
+/*border --> "tamanho" "estilo(solid, pontilhado)" e "cor"*/
+/*border-radius --> arredonda a borda*/
+/*box-sizing: border-box --> previne que a estilização ultrapasse o tamanho determinado de pixels.*/
+/**/
+/**/
+
+/*           TRANSÇÕES APLICABILIDADES      */
+/* transition-duration --> duração para a troca de estilos*/
+/* transition-delay --> tempo que o mouse deve ficar no elemento para ativar a animação*/
+/* trasition-property --> aplica a transição para apenas o item selecionado*/
+/* transition-timing-function --> tempo de acelaração da transição */
+/* transition(podeacoplar todas definições) --> 1s (duration) ease-in-out (timing-fuction) all (property)*/
+
+/*             KEYFRAMES APLICAÇÕES         */
+/* @keyframe (nome) --> para criar um keyframe, para usarmos momentos dele usamos %.*/
+/* animation-name: (keyframe) --> para usarmos a animação no keyframe*/
+/* animation-duration --> duração da animação sendo realizada*/
+/* animation-iteration-cound --> quantidade de vezes que sera feita a animação*/
+/* animation-fill-mode --> Define onde terminará a animação depois de repitir*/
+
+/*             MEDIA CODES DE AJUSTES           */
+/* @media (max-width: QTD(px)) {elementos}--> determina algo que ira acontecer com o tamanho da tela*/
+/**/
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.img-iphone {
+    width: 500px;
+    margin-top: 50px;
+    /* Define o item que fica na frente de todos*/
+    z-index: 2;
+    animation: 1s ease-in-out iphone-aparece;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+main .div-principal h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+main .div-principal p {
+    margin-bottom: 10px;
+}
+
+main .div-principal h6 {
+    color: #626262;
+    font-size: 20px;
+    font-weight: 300;
+    margin-top: 30px;
+}
+
+main .div-principal button {
+    background-color: #0071e3;
+    border-radius: 10px;
+    color: #ffffff;
+/* O padding desta forma aplica, a primeira taxa de pixels em cima e em baixo, e a segunda nos lados*/
+    padding: 10px 20px;
+    border: none;
+/* Este codigo cursor, altera a setinha para uma mão quando passado em cima no botão*/
+    cursor: pointer;
+    margin-top: 20px;
+}
+/* Qundo colocamos os : apos selecionarmos um item a ser estilizado, trata-se de um evento*/
+/* Evento de passar o mouse por cima "hover"*/
+main .div-principal button:hover {
+    background-color: #3c92e7;
+    transition: 0.4s ease-in-out all;
+    
+}
+/* Evento de clicar "active"*/
+main .div-principal button:active {
+    background-color: #81A5C4;
+}
+
+main .div-principal h5 {
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+main .div-principal .conteudo {
+    display: flex;
+    margin-top: 10px;
+    gap: 5px;
+}
+
+main .div-principal .conteudo span {
+ height: 40px;
+ width: 40px;
+ border-radius: 50%;
+
+}
+
+#azul {
+    background-color: #81A5C4;
+}
+
+#amarelo {
+    background-color: #F7DA47;
+}
+
+#branco {
+    background-color: #C1C1C1;
+    
+}
+
+#preto {
+    background-color: #272D33;    
+}
+
+#vermelho {
+    background-color: #B50012;
+}
+
+#roxo {
+    background-color: #EDE7F1;
+}
+
+.circulo {
+    background-color: #81A5C4;
+    /* O clip-path determina a forma da div, sendo especificado (tamanho e posicão)*/
+    clip-path: circle(600px at right 1000px);
+    width: 100%;
+    height: 100%;
+    /* O position: absolute, faz que possamos determinar onde o item ira ficar*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: 2.5s ease-in-out circulo-aparece;
+}
+
+@keyframes iphone-aparece{
+    0% {
+        width: 50px;
+    }
+
+    100% {
+        width: 500px;
+    }
+}
+
+@keyframes circulo-aparece {
+    0% {
+        clip-path: circle(0%);
+    }
+
+    40% {clip-path: circle(800px at right 1000px);
+
+    }
+
+    100% {
+        clip-path: circle(600px at right 1000px);
+    }
+}
